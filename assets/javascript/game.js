@@ -16,7 +16,7 @@ function randomArr(){
         const element = Math.floor(Math.random()*12)+1;
         numberOptions.push(element);
     }
-    //console.log(numberOptions);
+    console.log(numberOptions);
 }
 
 function createCrystals(){    
@@ -51,6 +51,9 @@ function restartGame(){
     $("#num-to-guess").text(targetNumber);
     // console.log(targetNumber);
 
+    //write counter to screen
+    $("#user-guess").text(counter);
+
     //write score to screen
     $("#win").text(win);
     $("#loss").text(loss);
@@ -59,7 +62,7 @@ function restartGame(){
     randomArr();
 
      // //clear crystals from previous round, if any
-     $("#crystals").empty();
+     $("#crystals > img").remove();
 
      //call createCrystal function
      createCrystals();
@@ -91,7 +94,7 @@ $(".crystal-image").click( function() {
     //else if counter > targetNumber, user loses & game restarts
     else if (counter > targetNumber){
         loss++;
-        // alert("You Lose!");
+        //alert("You Lose! " + counter + " is larger than " + targetNumber );
         restartGame();
     }
 })
