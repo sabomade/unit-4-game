@@ -1,5 +1,13 @@
 // VARIABLES
 //===============================
+//score
+var win = 0;
+var loss = 0;
+
+//write score to screen
+$("#win").text(win);
+$("#loss").text(loss);
+
 //random target number between 19-120
 var targetNumber = Math.floor(Math.random() * 120)+19;
 
@@ -53,4 +61,17 @@ $(".crystal-image").click( function() {
 
     //write counter to screen
     $("#user-guess").text(counter);
+
+    //if counter = targetNumber, user wins & game restarts
+    if(counter === targetNumber){
+        win++;
+        alert("You Win!");
+        restartGame();
+    }
+    //else if counter > targetNumber, user loses & game restarts
+    else if (counter > targetNumber){
+        loss++;
+        alert("You Lose!");
+        restartGame();
+    }
 })
