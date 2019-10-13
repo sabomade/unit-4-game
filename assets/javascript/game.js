@@ -88,13 +88,13 @@ $(".crystal-image").click( function() {
     //if counter = targetNumber, user wins & game restarts
     if(counter === targetNumber){
         win++;
-        // alert("You Win!");
+        alert("You Win!" + counter + " is equal to " + targetNumber );
         restartGame();
     }
     //else if counter > targetNumber, user loses & game restarts
     else if (counter > targetNumber){
         loss++;
-        //alert("You Lose! " + counter + " is larger than " + targetNumber );
+        alert("You Lose! " + counter + " is larger than " + targetNumber );
         restartGame();
     }
 })

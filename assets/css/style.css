@@ -10,3 +10,40 @@ body{
 ul{
     list-style-image: url(../images/crystal-list.svg);
 }
+
+.score{
+    background: #F4F9FA;
+    border: #9B9C9C solid 3px;
+    margin: 10px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.targetNum{
+    background:#D8F4FA;
+    border: #98AFB4 solid 3px;
+    margin: 10px auto;
+    padding: 20px;
+    text-align:center;
+}
+
+.userNum{
+    background: #D0D5D1;
+    border: #7A7A7A solid 3px;
+    margin: 10px auto;
+    padding: 20px;
+    text-align:center;
+}
+
+.crystal-buttons{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 100px;
+}
+.crystal-image{
+    
+}
+
+.fixed-bottom{
+   
+}
