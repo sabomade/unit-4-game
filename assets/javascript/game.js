@@ -5,7 +5,7 @@ var loss = 0;
 var targetNumber = 0;
 var counter = 0;
 var numberOptions = [];
-var crystals = ["assets/images/pink.svg", "assets/images/orange.svg", "assets/images/green.svg", "assets/images/purple.svg"];
+var crystals = ["assets/images/crystal-buttons-pink.svg", "assets/images/crystal-buttons-orange.svg", "assets/images/crystal-buttons-green.svg", "assets/images/crystal-buttons-purple.svg"];
 
 // FUNCTIONS
 //===============================
