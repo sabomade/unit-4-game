@@ -40,7 +40,17 @@ for (let index = 0; index < numberOptions.length; index++) {
     $("#crystals").append(imageCrystal);
 }
 
-
-
 // MAIN PROCESS
 //===============================
+//add onclick function to every crystal
+$(".crystal-image").click( function() {
+    //grab value of crystal and convert to integer
+    var crystalValue = ($(this).attr("data-crystalvalue"));
+    crystalValue = parseInt(crystalValue);
+
+    //add crystal value clicked to counter 
+    counter += crystalValue;
+
+    //write counter to screen
+    $("#user-guess").text(counter);
+})
