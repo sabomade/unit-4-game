@@ -1,55 +1,75 @@
 // VARIABLES
 //===============================
-//score
 var win = 0;
 var loss = 0;
-
-//write score to screen
-$("#win").text(win);
-$("#loss").text(loss);
-
-//random target number between 19-120
-var targetNumber = Math.floor(Math.random() * 120)+19;
-
-//write targetNumber to screen
-$("#num-to-guess").text(targetNumber);
-// console.log(targetNumber);
-
+var targetNumber = 0;
 var counter = 0;
 var numberOptions = [];
-
 var crystals = ["assets/images/pink.svg", "assets/images/orange.svg", "assets/images/green.svg", "assets/images/purple.svg"];
 
 // FUNCTIONS
 //===============================
-//Each crystal should have a random hidden value between 1 - 12.
-//generate 4 random numbers between 1-12 and push to numberOptions array
-for (let index = 0; index < 4; index++) {
-    const element = Math.floor(Math.random()*12)+1;
-    numberOptions.push(element);
+function randomArr(){
+    //Each crystal should have a random hidden value between 1 - 12.
+    //generate 4 random numbers between 1-12 and push to numberOptions array
+    for (let index = 0; index < 4; index++) {
+        const element = Math.floor(Math.random()*12)+1;
+        numberOptions.push(element);
+    }
+    //console.log(numberOptions);
 }
-//console.log(numberOptions);
 
-//create a crystal for each numberOption
-for (let index = 0; index < numberOptions.length; index++) {
-    //for each iteration, creat an imageCrystal
-    var imageCrystal = $("<img>");
-    
-    //add class to cyrstal
-    imageCrystal.addClass("crystal-image");
+function createCrystals(){    
+    //create a crystal for each numberOption
+    for (let index = 0; index < numberOptions.length; index++) {
+        //for each iteration, creat an imageCrystal
+        var imageCrystal = $("<img>");
+        
+        //add class to cyrstal
+        imageCrystal.addClass("crystal-image");
 
-    //assign a crystal img
-    imageCrystal.attr("src", crystals[index]);
+        //assign a crystal img
+        imageCrystal.attr("src", crystals[index]);
 
-    //assign random value to crystal
-    imageCrystal.attr("data-crystalvalue", numberOptions[index]);
+        //assign random value to crystal
+        imageCrystal.attr("data-crystalvalue", numberOptions[index]);
 
-    //print crystals to screen
-    $("#crystals").append(imageCrystal);
+        //print crystals to screen
+        $("#crystals").append(imageCrystal);
+    }
+}
+
+function restartGame(){
+    //reset variables
+    counter = 0;
+    numberOptions = [];
+
+    //random target number between 19-120
+    targetNumber = Math.floor(Math.random() * 120)+19;
+
+    //write targetNumber to screen
+    $("#num-to-guess").text(targetNumber);
+    // console.log(targetNumber);
+
+    //write score to screen
+    $("#win").text(win);
+    $("#loss").text(loss);
+
+    //call randomArr function
+    randomArr();
+
+     // //clear crystals from previous round, if any
+     $("#crystals").empty();
+
+     //call createCrystal function
+     createCrystals();
 }
 
 // MAIN PROCESS
 //===============================
+//call function
+restartGame();
+
 //add onclick function to every crystal
 $(".crystal-image").click( function() {
     //grab value of crystal and convert to integer
@@ -65,13 +85,13 @@ $(".crystal-image").click( function() {
     //if counter = targetNumber, user wins & game restarts
     if(counter === targetNumber){
         win++;
-        alert("You Win!");
+        // alert("You Win!");
         restartGame();
     }
     //else if counter > targetNumber, user loses & game restarts
     else if (counter > targetNumber){
         loss++;
-        alert("You Lose!");
+        // alert("You Lose!");
         restartGame();
     }
 })
