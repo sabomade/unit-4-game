@@ -20,6 +20,7 @@ function randomArr(){
 }
 
 function createCrystals(){    
+    
     //create a crystal for each numberOption
     for (let index = 0; index < numberOptions.length; index++) {
         //for each iteration, creat an imageCrystal
@@ -61,11 +62,12 @@ function restartGame(){
     //call randomArr function
     randomArr();
 
-     // //clear crystals from previous round, if any
-     $("#crystals > img").remove();
+    //clear crystals from previous round, if any
+    $("#crystals > img").remove();
 
      //call createCrystal function
      createCrystals();
+
 }
 
 // MAIN PROCESS
@@ -74,9 +76,10 @@ function restartGame(){
 restartGame();
 
 //add onclick function to every crystal
-$(".crystal-image").click( function() {
+$("#crystals").on("click", ".crystal-image", function() {
     //grab value of crystal and convert to integer
     var crystalValue = ($(this).attr("data-crystalvalue"));
+    console.log($(this).attr("data-crystalvalue"));
     crystalValue = parseInt(crystalValue);
 
     //add crystal value clicked to counter 
