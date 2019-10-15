@@ -8,9 +8,10 @@ body{
 }
 
 ul{
-    list-style-image: url(../images/crystal-list.svg);
+    display: flex;
+    align-content: center;
+    /* list-style-image: url(../images/crystal-list.svg); */
 }
-
 .score{
     background: #F4F9FA;
     border: #9B9C9C solid 3px;
