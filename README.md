@@ -16,4 +16,4 @@ Click on a crystal to increase the value of your guess, try not to go over the t
 This is the only version and is maintained by me, [sabomade](https://github.com/sabomade).
 
 ## Acknowledgements
-Built & completed as part of the UCB Coding Bootcamp, Homework 4: JQuery
+Built & completed as part of the UCB Coding Bootcamp, Homework 4: Javascript & JQuery (option 1)
