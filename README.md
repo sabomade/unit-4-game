@@ -1,5 +1,5 @@
 # unit-4-game
-Cyrstal Collector Game using jquery
+An interactive game for web browsers. Dynamically updates html with the jQuery library.
 
 ![Image of Cyrstal Collector Game](assets/images/crystal-collector.png)
 
