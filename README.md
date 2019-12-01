@@ -1,7 +1,7 @@
 # unit-4-game
 Cyrstal Collector Game using jquery
 
-![Image of Cyrstal Collector Game](assets/images/cyrstal-collector.png)
+![Image of Cyrstal Collector Game](assets/images/crystal-collector.png)
 
 ### How to Play
 Click on a crystal to increase the value of your guess, try not to go over the target #.
